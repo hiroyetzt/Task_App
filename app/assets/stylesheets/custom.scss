@@ -50,23 +50,45 @@ p {
   line-height: 1.7em;
 }
 
+
+
 /* ヘッダー */
+
+#header {
+  background-color: #008080;
+}
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
+  font-style: italic;
   font-weight: bold;
 }
 
 #logo:hover {
-  color: #fff;
+  color: #C0C0C0;
   text-decoration: none;
 }
+
+.header-list {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.header-list:hover {
+  color: #C0C0C0 !important;
+  text-decoration: none;
+}
+
+.dropdown-toggle {
+  color: #fff !important;
+  background-color: #008080 !important;
+}
+
 
 /* デバッグウインドウ */
 
