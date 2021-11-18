@@ -8,10 +8,12 @@
       <p>↓↓初めてのご利用↓↓</p>
       
       <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" %>
-      <div>
-        <%= link_to "ゲストログイン（管理権限）", login_path, class: "btn btn-danger" %>
-        <%= link_to "ゲストログイン（一般権限）", login_path, class: "btn btn-warning" %>
-      </div>
+      <% unless logged_in? %>
+        <div>
+          <%= link_to "ゲストログイン（管理権限）", login_path, class: "btn btn-danger" %>
+          <%= link_to "ゲストログイン（一般権限）", login_path, class: "btn btn-warning" %>
+        </div>
+      <% end %>  
     </div>
   </div>
   <div class="col-md-4">
@@ -22,7 +24,9 @@
       <%= f.email_field :email, class: 'form-control' %>
             
       <%= f.label :password, class: "label-login" %>
-      <%= f.email_field :password, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control' %>
+      
+      
           
       <%= f.label :remember_me, class: "checkbox inline checkbox-login", for: "remember_me" do %>
         <%= f.check_box :remember_me, id: "remember_me" %>
