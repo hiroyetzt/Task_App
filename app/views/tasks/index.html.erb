@@ -1,0 +1,28 @@
+<h1>管理者のタスク一覧</h1>
+<div class="row">
+  <div class="col-md-10 col-md-offset-2">
+    <%= link_to "タスク新規作成", new_user_task_path(@user), class: "btn btn-lg btn-primary pull-right" %>
+    <table class="table table-hover" id="table-tasks">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>作成日</th>
+          <th></th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr>
+            <td class="task_name"><%= link_to task.task_name, user_task_path(@user, task) %></td>
+            <td><%= l(task.created_at, format: :long) %></td>
+            <td>
+            <%= link_to "編集", edit_user_task_path(@user, task), class: "btn btn-success" %>
+            <%= link_to "削除", user_task_path(@user, task), method: :delete, data:{ confirm: "削除してよろしいですか？"}, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
