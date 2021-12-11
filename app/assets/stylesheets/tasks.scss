@@ -1,10 +1,24 @@
-#table-tasks {
-  td, td {
-    vertical-align: middle;
+#table-tasks td {
+  vertical-align: middle;
+}
+    
+#table-task {
+  th {
+    text-align: center;
+  }
+  td {
+    white-space: pre-wrap;
   }
 }
 
 .task_name {
-  font-size: 18px;
-  
+  font-size: 16px;
+}
+
+.label-newtask {
+  margin-top: 5px;
+}
+
+.btn-newtask {
+  margin-top: 10px;
 }
